@@ -19,16 +19,18 @@ class Set {
 };
 
 /*==========[Class Functions]==========*/
-// need to repair
+
+/*----------[Unity]----------*/
+
 void Set::unity() {
     vector<int> ans;
     if (set1.size() == 0 && set2.size() == 0) {
-        cout << "Пустое множество!\n";
+        cout << "\nПустое множество!\n";
         cout << "Результат: {}";
         return;
     }
     if (set1.size() == 0) {
-        cout << "Результат: {";
+        cout << "\nРезультат: {";
         for (int i = 0; i < set2.size(); i++) {
             if (i != set2.size()-1)
                 cout << set2[i] << ", ";
@@ -38,7 +40,7 @@ void Set::unity() {
         return;
     }
     if (set2.size() == 0) {
-        cout << "Результат: {";
+        cout << "\nРезультат: {";
         for (int i = 0; i < set1.size(); i++) {
             if (i != set1.size()-1)
                 cout << set1[i] << ", ";
@@ -59,7 +61,7 @@ void Set::unity() {
                 ans.push_back(set2[i]);
         }
 
-    cout << "\nРезультат: {";
+    cout << "\nРезультат(объединение): {";
     for (int i = 0; i < ans.size(); i++) {
         if (i != ans.size()-1)
             cout << ans[i] << ", ";
@@ -67,6 +69,10 @@ void Set::unity() {
             cout << ans[i] << "}";
     }
 }
+
+/*---------------------------*/
+
+/*----------[Intersection]----------*/
 
 void Set::intersection() {
     vector<int> ans;
@@ -74,7 +80,7 @@ void Set::intersection() {
         for (auto j: set2)
             if (i == j)
                 ans.push_back(j);
-    cout << "\nРезультат: {";
+    cout << "\nРезультат(пересечение): {";
     for (int i = 0; i < ans.size(); i++) {
         if (i != ans.size()-1)
             cout << ans[i] << ", ";
@@ -83,6 +89,7 @@ void Set::intersection() {
     }
 }
 
+/*----------------------------------*/
 
 /*==========[Main Function]==========*/
 
@@ -94,7 +101,7 @@ int main ()
     cout << "Введите мощность множества А: "; cin >> power_s1;
     
 Problem_s1:    
-    vector<int> s1;
+    vector<int> s1 = {};
     cout << "Введите множество А: ";
     for (int i = 0; i < power_s1; i++) {cin >> number; s1.push_back(number);}
     for (int i = 0; i < power_s1; i++)
@@ -104,9 +111,10 @@ Problem_s1:
                     cout << "Ошибка! Введите множество заново!\n";
                     goto Problem_s1;
                 }
+    
+    cout << endl;
 
     int power_s2;
-    cout << endl;
     cout << "Введите мощность множества B: "; cin >> power_s2;
 
 Problem_s2:
@@ -120,14 +128,28 @@ Problem_s2:
                     cout << "Ошибка! Введите множество заново!\n";
                     goto Problem_s2;
                 }
+    
+    cout << endl;
 
     Set s(s1, s2);
-    s.unity();
+    int operation;
+    cout << "Операции над множествами:\n"
+         << "  1 - Объединение;\n"
+         << "  2 - Пересечение.\n";
+    cout << "Введите операцию: "; cin >> operation;
+    switch (operation) {
+        case 1:
+            s.unity();
+            break;
+        case 2:
+            s.intersection();
+            break;
+    }
 
     return 0;
 
 }
 
-/* 
-   2. Если мошность введенного множества меньше power;
-   3. Сделать выбор функции в main */
+// 1. Если мошность введенного множества меньше power;
+// 2. Сделат проверку на пустые множества в intersection
+
