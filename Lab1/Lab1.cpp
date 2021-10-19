@@ -42,16 +42,6 @@ void Set::unity()
         }
         return;
     }
-    // if (set2.size() == 0) {
-    //     cout << "\nРезультат: {";
-    //     for (int i = 0; i < set1.size(); i++) {
-    //         if (i != set1.size()-1)
-    //             cout << set1[i] << ", ";
-    //         else
-    //             cout << set1[i] << "}";
-    //     }
-    //     return;      
-    // }
     for (auto it: set1) {ans.push_back(it);}
     vector<int> positions;
     for (int i = 0; i < set1.size(); i++)
@@ -160,7 +150,4 @@ Problem_s2:
     return 0;
 
 }
-
-// 1. Если мошность введенного множества меньше power;
-// 2. Сделат проверку на пустые множества в intersection
-
+// 1. Если мощность введенного множества меньше power;
