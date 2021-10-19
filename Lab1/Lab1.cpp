@@ -7,7 +7,8 @@ using namespace std;
 
 /*==========[Class]==========*/
 
-class Set {
+class Set 
+{
     private:
         vector<int> set1;
         vector<int> set2;
@@ -22,8 +23,10 @@ class Set {
 
 /*----------[Unity]----------*/
 
-void Set::unity() {
+void Set::unity() 
+{
     vector<int> ans;
+
     if (set1.size() == 0 && set2.size() == 0) {
         cout << "\nПустое множество!\n";
         cout << "Результат: {}";
@@ -39,16 +42,16 @@ void Set::unity() {
         }
         return;
     }
-    if (set2.size() == 0) {
-        cout << "\nРезультат: {";
-        for (int i = 0; i < set1.size(); i++) {
-            if (i != set1.size()-1)
-                cout << set1[i] << ", ";
-            else
-                cout << set1[i] << "}";
-        }
-        return;      
-    }
+    // if (set2.size() == 0) {
+    //     cout << "\nРезультат: {";
+    //     for (int i = 0; i < set1.size(); i++) {
+    //         if (i != set1.size()-1)
+    //             cout << set1[i] << ", ";
+    //         else
+    //             cout << set1[i] << "}";
+    //     }
+    //     return;      
+    // }
     for (auto it: set1) {ans.push_back(it);}
     vector<int> positions;
     for (int i = 0; i < set1.size(); i++)
@@ -74,19 +77,25 @@ void Set::unity() {
 
 /*----------[Intersection]----------*/
 
-void Set::intersection() {
+void Set::intersection() 
+{
     vector<int> ans;
+
     for (auto i: set1)
         for (auto j: set2)
             if (i == j)
                 ans.push_back(j);
+    if (ans.size() != 0) {
     cout << "\nРезультат(пересечение): {";
-    for (int i = 0; i < ans.size(); i++) {
-        if (i != ans.size()-1)
-            cout << ans[i] << ", ";
-        else
-            cout << ans[i] << "}";
+        for (int i = 0; i < ans.size(); i++) {
+            if (i != ans.size()-1)
+                cout << ans[i] << ", ";
+            else
+                cout << ans[i] << "}";
+        }
     }
+    else
+        cout << "\nРезультат: {}\n"; 
 }
 
 /*----------------------------------*/
@@ -98,12 +107,13 @@ int main ()
     int number;
 
     int power_s1; 
-    cout << "Введите мощность множества А: "; cin >> power_s1;
+    cout << "\nВведите мощность множества А: "; cin >> power_s1;
     
 Problem_s1:    
     vector<int> s1 = {};
     cout << "Введите множество А: ";
-    for (int i = 0; i < power_s1; i++) {cin >> number; s1.push_back(number);}
+    for (int i = 0; i < power_s1; i++) 
+        {cin >> number; s1.push_back(number);}
     for (int i = 0; i < power_s1; i++)
         for (int j = 0; j < power_s1; j++)
             if (i != j)
@@ -120,7 +130,8 @@ Problem_s1:
 Problem_s2:
     vector<int> s2;
     cout << "Введите множество B: ";
-    for (int i = 0; i < power_s2; i++) {cin >> number; s2.push_back(number);}
+    for (int i = 0; i < power_s2; i++) 
+        {cin >> number; s2.push_back(number);}
     for (int i = 0; i < power_s2; i++)
         for (int j = 0; j < power_s2; j++)
             if (i != j)
@@ -133,7 +144,7 @@ Problem_s2:
 
     Set s(s1, s2);
     int operation;
-    cout << "Операции над множествами:\n"
+    cout << "\nОперации над множествами:\n"
          << "  1 - Объединение;\n"
          << "  2 - Пересечение.\n";
     cout << "Введите операцию: "; cin >> operation;
