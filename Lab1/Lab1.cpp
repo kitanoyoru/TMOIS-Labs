@@ -1,5 +1,5 @@
 /*==========[Libraries]==========*/
-
+#include <boost/logic/tribool.hpp>
 #include <iostream>
 #include <vector>
 #include <algorithm>

@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kitanoyoru/Documents/TMOIS-Labs/Lab1/Lab1.cpp
+iostream
+-
+vector
+-
+algorithm
+-
+
