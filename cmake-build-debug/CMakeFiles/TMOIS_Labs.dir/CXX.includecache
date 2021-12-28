@@ -6,8 +6,10 @@
 
 #IncludeRegexTransform: 
 
-/home/kitanoyoru/Documents/TMOIS-Labs/Lab1/Lab1.cpp
+/home/kitanoyoru/Documents/TMOIS-Labs/Lab/Lab1.cpp
 iostream
+-
+utility
 -
 vector
 -

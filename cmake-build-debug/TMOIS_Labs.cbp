@@ -82,7 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/kitanoyoru/Documents/TMOIS-Labs/Lab1/Lab1.cpp">
+		<Unit filename="/home/kitanoyoru/Documents/TMOIS-Labs/Lab/Lab1.cpp">
 			<Option target="TMOIS_Labs"/>
 		</Unit>
 		<Unit filename="/home/kitanoyoru/Documents/TMOIS-Labs/CMakeLists.txt">

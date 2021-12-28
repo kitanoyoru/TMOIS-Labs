@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /var/lib/snapd/snap/clion/175/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /var/lib/snapd/snap/clion/177/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /var/lib/snapd/snap/clion/175/bin/cmake/linux/bin/cmake -E rm -f
+RM = /var/lib/snapd/snap/clion/177/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/kitanoyoru/Documents/TMOIS-Labs/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/var/lib/snapd/snap/clion/175/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/var/lib/snapd/snap/clion/177/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -78,7 +78,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/var/lib/snapd/snap/clion/175/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/var/lib/snapd/snap/clion/177/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -129,29 +129,29 @@ TMOIS_Labs/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TMOIS_Labs.dir/build.make CMakeFiles/TMOIS_Labs.dir/build
 .PHONY : TMOIS_Labs/fast
 
-Lab1/Lab1.o: Lab1/Lab1.cpp.o
-.PHONY : Lab1/Lab1.o
+Lab/Lab1.o: Lab/Lab1.cpp.o
+.PHONY : Lab/Lab1.o
 
 # target to build an object file
-Lab1/Lab1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TMOIS_Labs.dir/build.make CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.o
-.PHONY : Lab1/Lab1.cpp.o
+Lab/Lab1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TMOIS_Labs.dir/build.make CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.o
+.PHONY : Lab/Lab1.cpp.o
 
-Lab1/Lab1.i: Lab1/Lab1.cpp.i
-.PHONY : Lab1/Lab1.i
+Lab/Lab1.i: Lab/Lab1.cpp.i
+.PHONY : Lab/Lab1.i
 
 # target to preprocess a source file
-Lab1/Lab1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TMOIS_Labs.dir/build.make CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.i
-.PHONY : Lab1/Lab1.cpp.i
+Lab/Lab1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TMOIS_Labs.dir/build.make CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.i
+.PHONY : Lab/Lab1.cpp.i
 
-Lab1/Lab1.s: Lab1/Lab1.cpp.s
-.PHONY : Lab1/Lab1.s
+Lab/Lab1.s: Lab/Lab1.cpp.s
+.PHONY : Lab/Lab1.s
 
 # target to generate assembly for a file
-Lab1/Lab1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TMOIS_Labs.dir/build.make CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.s
-.PHONY : Lab1/Lab1.cpp.s
+Lab/Lab1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TMOIS_Labs.dir/build.make CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.s
+.PHONY : Lab/Lab1.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... TMOIS_Labs"
-	@echo "... Lab1/Lab1.o"
-	@echo "... Lab1/Lab1.i"
-	@echo "... Lab1/Lab1.s"
+	@echo "... Lab/Lab1.o"
+	@echo "... Lab/Lab1.i"
+	@echo "... Lab/Lab1.s"
 .PHONY : help
 
 

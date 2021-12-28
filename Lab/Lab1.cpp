@@ -13,7 +13,9 @@ class Set
         vector<int> set2;
         vector<int> u;
     public:
-        Set (vector<int> s1, vector<int> s2, vector<int> _u): set1(move(s1)), set2(move(s2)), u(move(_u)) {}
+        Set (vector<int> s1, vector<int> s2): set1(move(s1)), set2(move(s2)) {
+            for (int i = 1; i < 101; ++i) { u.push_back(i); }
+        }
 
         void intersection();
         void unity();
@@ -107,7 +109,7 @@ void Set::differenceA()
     vector<int> ans (set1);
     for (auto i {set1.begin()}; i != set1.end(); ++i) {
         for (auto j {set2.begin()}; j != set2.end(); ++j) {
-            if (*i == *j) {
+            if (*i == *j) { // Если размер одного из множеств равен нулю,
                 auto index = find(ans.begin(), ans.end(), *i);
                 if (index != ans.end())
                     ans.erase(index);
@@ -118,12 +120,12 @@ void Set::differenceA()
         cout << "\nРезультат(разность A B): {";
         for (int i{0}; i < ans.size(); ++i) {
             if (i != ans.size() - 1)
-                cout << ans[i] << ", ";
+                cout << ans[i] << ", "; // Если размер одного из множеств равен нулю,
             else
                 cout << ans[i] << "}\n";
         }
     } else {
-        cout << "\nРезультат(разность А В): {}\n";
+        cout << "\nРезультат(разность А В): {}\n"; // Если размер одного из множеств равен нулю,
     }
 }
 
@@ -160,16 +162,16 @@ void Set::differenceB()
 
 /*----------[SymDifference]----------*/
 
-void Set::sym_difference() {
+void Set::sym_difference() { // Если размер исходных множеств
     vector<int> ans;
 
     vector<int> diffAB (set1);
-    for (auto i {set1.begin()}; i != set1.end(); ++i) {
+    for (auto i {set1.begin()}; i != set1.end(); ++i) { //Если размер исходных множеств
         for (auto j {set2.begin()}; j != set2.end(); ++j) {
             if (*i == *j) {
                 auto index = find(diffAB.begin(), diffAB.end(), *i);
                 if (index != diffAB.end())
-                    diffAB.erase(index);
+                    diffAB.erase(index);  // Если размер исходных множеств
             }
         }
     }
@@ -228,9 +230,9 @@ void Set::sym_difference() {
 
 /*----------[DekartAB]----------*/
 
-void Set::dekartAB()
+void Set::dekartAB() // Если размер одного из множеств равен нулю
 {
-    vector<pair<int, int>> out;
+    vector<pair<int, int>> out; // Если размер одного из множеств равен нулю,
 
     for (auto i: set1) {
         for (auto j: set2) {
@@ -241,7 +243,7 @@ void Set::dekartAB()
     cout << "Результат(декартово произведение А В): {";
     for (auto i = 0; i < out.size(); ++i) {
         if (i != out.size() - 1)
-            cout << "<" << out[i].first << ", " << out[i].second << ">, ";
+            cout << "<" << out[i].first << ", " << out[i].second << ">, "; // Если размер одного из множеств равен нулю,
         else
             cout << "<" << out[i].first << ", " << out[i].second << ">} ";
     }
@@ -256,12 +258,12 @@ void Set::dekartBA()
     vector<pair<int, int>> out;
 
     for (auto i: set2) {
-        for (auto j: set1) {
+        for (auto j: set1) { // Если размер одного из множеств равен нулю,
             out.push_back(make_pair(i, j));
         }
     }
 
-    cout << "Результат(декартово произведение B A): {";
+    cout << "Результат(декартово произведение B A): {"; // Если размер одного из множеств равен нулю,
     for (auto i = 0; i < out.size(); ++i) {
         if (i != out.size() - 1)
             cout << "<" << out[i].first << ", " << out[i].second << ">, ";
@@ -276,14 +278,14 @@ void Set::dekartBA()
 
 void Set::dlcA()
 {
-    vector<int> ans (u);
+    vector<int> ans (u); // Если размер одного из множеств равен нулю
     for (auto i {u.begin()}; i != u.end(); ++i) {
         for (auto j {set1.begin()}; j != set1.end(); ++j) {
-            if (*i == *j) {
+            if (*i == *j) {  // Если размер одного из множеств равен нулю,
                 auto index = find(ans.begin(), ans.end(), *i);
                 if (index != ans.end())
                     ans.erase(index);
-            }
+            } // Если размер одного из множеств равен нулю,
         }
     }
 
@@ -296,7 +298,7 @@ void Set::dlcA()
                 cout << ans[i] << "}\n";
         }
     } else {
-        cout << "\nРезультат(дополнение А): {}\n";
+        cout << "\nРезультат(дополнение А): {}\n"; // Если размер одного из множеств равен нулю,
     }
 }
 
@@ -307,19 +309,19 @@ void Set::dlcA()
 void Set::dlcB()
 {
     vector<int> ans (u);
-    for (auto i {u.begin()}; i != u.end(); ++i) {
+    for (auto i {u.begin()}; i != u.end(); ++i) { // Если размер одного из множеств равен нулю
         for (auto j {set2.begin()}; j != set2.end(); ++j) {
             if (*i == *j) {
                 auto index = find(ans.begin(), ans.end(), *i);
                 if (index != ans.end())
-                    ans.erase(index);
+                    ans.erase(index); // Если размер одного из множеств равен нулю
             }
         }
     }
 
     if (!ans.empty()) {
         cout << "\nРезультат(дополнение В): {";
-        for (int i{0}; i < ans.size(); ++i) {
+        for (int i{0}; i < ans.size(); ++i) { // Если размер одного из множеств равен нулю
             if (i != ans.size() - 1)
                 cout << ans[i] << ", ";
             else
@@ -338,16 +340,15 @@ int main () {
     int nA = 0, nB = 0, nU = 0;
     short decision = 0, ch = 0;
     vector<int> A(nA), B(nB), U(nU);
-    cout << "Введите мощность множества А: "; cin >> nA;
-    cout << "Введите мощность множества B: "; cin >> nB;
-    cout << "Введите мощность универсума U: "; cin >> nU;
 
     cout << "Укажите способ задания множеств:"
          << "\n\t1-Перечесление;"
          << "\n\t2-Высказыванием((4x(x-2)(x+4))/(4x^2 + 8x - 32))\n";
     cin >> ch;
-    
+
     if (ch == 1) {
+        cout << "Введите мощность множества А: ";
+        cin >> nA; // Если размер одного из множеств равен нулю
         cout << "\nВведите множество А: ";
         for (auto i = 0; i < nA; ++i) {
             int temp;
@@ -355,6 +356,8 @@ int main () {
             A.push_back(temp);
         }
 
+        cout << "Введите мощность множества B: ";
+        cin >> nB;
         cout << "\nВведите множество B: ";
         for (auto i = 0; i < nB; ++i) {
             int temp;
@@ -362,67 +365,66 @@ int main () {
             B.push_back(temp);
         }
 
-        cout << "\nВведите универсум U: ";
-        for (auto i = 0; i < nU; ++i) {
-            int temp;
-            cin >> temp;
-            U.push_back(temp);
-        }
     } else if (ch == 2) {
+        cout << "Введите мощность множества А: ";
+        cin >> nA; // Если размер одного из множеств равен нулю
         for (auto i = 1; i < nA + 1; ++i) {
             A.push_back(i);
         }
+        cout << "Множество А было задано" << endl;
+
+        cout << "Введите мощность множества B: ";
+        cin >> nB;
         for (auto i = 1; i < nB + 1; ++i) {
             B.push_back(i);
         }
-        for (auto i = 1; i < nU + 1; ++i) {
-            U.push_back(i);
-        }
+        cout << "Множество B было задано" << endl;
+
+
+        cout << "\nВведите номер операции из списка:"
+             << "\n\t1-Объединение;"
+             << "\n\t2-Пересечение;"
+             << "\n\t3-Разность А В;"
+             << "\n\t4-Разность В А;"
+             << "\n\t5-Симметрическая разность;"
+             << "\n\t6-Декартово произведение А В;"
+             << "\n\t7-Декартово произведение В А;"
+             << "\n\t8-Дополнение А;"
+             << "\n\t9-Дополнение В;\n";
+        cin >> decision;
+
+        Set s(A, B);
+
+        switch (decision) {
+            case 1:
+                s.unity();
+                break;
+            case 2:
+                s.intersection();
+                break;
+            case 3:
+                s.differenceA();
+                break;
+            case 4:
+                s.differenceB();
+                break;
+            case 5:
+                s.sym_difference();
+                break;
+            case 6:
+                s.dekartAB();
+                break;
+            case 7:
+                s.dekartBA();
+                break;
+            case 8:
+                s.dlcA();
+                break;
+            case 9:
+                s.dlcB();
+                break;
+        };
     }
 
-    cout << "\nВведите номер операции из списка:"
-         << "\n\t1-Объединение;"
-         << "\n\t2-Пересечение;"
-         << "\n\t3-Разность А В;"
-         << "\n\t4-Разность В А;"
-         << "\n\t5-Симметрическая разность;"
-         << "\n\t6-Декартово произведение А В;"
-         << "\n\t7-Декартово произведение В А;"
-         << "\n\t8-Дополнение А;"
-         << "\n\t9-Дополнение В;\n";
-    cin >> decision;
 
-    Set s(A, B, U);
-
-    switch (decision) {
-        case 1:
-            s.unity();
-            break;
-        case 2:
-            s.intersection();
-            break;
-        case 3:
-            s.differenceA();
-            break;
-        case 4:
-            s.differenceB();
-            break;
-        case 5:
-            s.sym_difference();
-            break;
-        case 6:
-            s.dekartAB();
-            break;
-        case 7:
-            s.dekartBA();
-            break;
-        case 8:
-            s.dlcA();
-            break;
-        case 9:
-            s.dlcB();
-            break;
-    };
 }
-
-

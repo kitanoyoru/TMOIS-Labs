@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /var/lib/snapd/snap/clion/175/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /var/lib/snapd/snap/clion/177/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /var/lib/snapd/snap/clion/175/bin/cmake/linux/bin/cmake -E rm -f
+RM = /var/lib/snapd/snap/clion/177/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -66,27 +66,27 @@ include CMakeFiles/TMOIS_Labs.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/TMOIS_Labs.dir/flags.make
 
-CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.o: CMakeFiles/TMOIS_Labs.dir/flags.make
-CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.o: ../Lab1/Lab1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kitanoyoru/Documents/TMOIS-Labs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.o -c /home/kitanoyoru/Documents/TMOIS-Labs/Lab1/Lab1.cpp
+CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.o: CMakeFiles/TMOIS_Labs.dir/flags.make
+CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.o: ../Lab/Lab1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kitanoyoru/Documents/TMOIS-Labs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.o -c /home/kitanoyoru/Documents/TMOIS-Labs/Lab/Lab1.cpp
 
-CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kitanoyoru/Documents/TMOIS-Labs/Lab1/Lab1.cpp > CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.i
+CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kitanoyoru/Documents/TMOIS-Labs/Lab/Lab1.cpp > CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.i
 
-CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kitanoyoru/Documents/TMOIS-Labs/Lab1/Lab1.cpp -o CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.s
+CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kitanoyoru/Documents/TMOIS-Labs/Lab/Lab1.cpp -o CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.s
 
 # Object files for target TMOIS_Labs
 TMOIS_Labs_OBJECTS = \
-"CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.o"
+"CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.o"
 
 # External object files for target TMOIS_Labs
 TMOIS_Labs_EXTERNAL_OBJECTS =
 
-TMOIS_Labs: CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.o
+TMOIS_Labs: CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.o
 TMOIS_Labs: CMakeFiles/TMOIS_Labs.dir/build.make
 TMOIS_Labs: CMakeFiles/TMOIS_Labs.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kitanoyoru/Documents/TMOIS-Labs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable TMOIS_Labs"

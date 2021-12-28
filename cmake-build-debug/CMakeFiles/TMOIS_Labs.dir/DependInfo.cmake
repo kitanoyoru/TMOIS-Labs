@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/kitanoyoru/Documents/TMOIS-Labs/Lab1/Lab1.cpp" "/home/kitanoyoru/Documents/TMOIS-Labs/cmake-build-debug/CMakeFiles/TMOIS_Labs.dir/Lab1/Lab1.cpp.o"
+  "/home/kitanoyoru/Documents/TMOIS-Labs/Lab/Lab1.cpp" "/home/kitanoyoru/Documents/TMOIS-Labs/cmake-build-debug/CMakeFiles/TMOIS_Labs.dir/Lab/Lab1.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
